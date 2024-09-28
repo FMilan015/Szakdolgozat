@@ -1,0 +1,21 @@
+.page {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.page h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.page p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}

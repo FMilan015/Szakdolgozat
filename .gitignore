@@ -58,3 +58,8 @@ psd
 thumb
 sketch
 
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws
+
