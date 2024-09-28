@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/szakdolgozat-frontend">
+      <excludeFolder url="file://$MODULE_DIR$/szakdolgozat-frontend/build" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="f654f75e-4cff-4f21-bf8a-02ced5f4d20c" />
+  </component>
+</module>
