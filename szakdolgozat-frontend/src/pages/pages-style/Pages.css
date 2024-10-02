@@ -10,12 +10,82 @@
     padding: 20px;
 }
 
-.page h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.category-buttons {
+    margin: 20px 0;
 }
 
-.page p {
+button {
+    padding: 15px 25px;
+    margin: 0 10px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
     font-size: 18px;
-    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+button.active-button {
+    background-color: #0f62fe;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.price-table {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+}
+
+.price-table th, .price-table td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.price-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.price-table th {
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 2px solid #555;
+}
+
+.price-table td img {
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.pagination {
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination span {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.pagination button:hover {
+    background-color: #555;
 }
