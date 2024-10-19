@@ -1,10 +1,22 @@
 import React from 'react';
-import './components-style/Header.css';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import './components-style/Header.css';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    isAuthenticated: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ isAuthenticated }) => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/home');
+        window.location.reload();
+    };
+
     return (
         <header className="header">
             <div className="logo">
@@ -12,17 +24,27 @@ const Header: React.FC = () => {
             </div>
             <nav className="nav">
                 <ul>
-                    <li><Link to="/real-time-news">Real-Time news</Link></li>
+                    <li><Link to="/news">News</Link></li>
                     <li><Link to="/tutorials">Tutorials</Link></li>
                     <li><Link to="/trading-tools">Trading tools</Link></li>
-                    <li><Link to="/portfolio-management">Portfolio management</Link></li>
                     <li><Link to="/price-data">Price data</Link></li>
                 </ul>
             </nav>
             <div className="client-area">
-                <Link to="/login" className="user-container">
-                    <FontAwesomeIcon icon={faUser} className="user-icon" />
-                </Link>
+                {isAuthenticated ? (
+                    <>
+                        <button onClick={handleLogout} className="logout-btn" aria-label="Logout">
+                            <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />
+                        </button>
+                        <Link to="/profile" className="user-container">
+                            <FontAwesomeIcon icon={faUser} className="user-icon" />
+                        </Link>
+                    </>
+                ) : (
+                    <Link to="/profile" className="user-container">
+                        <FontAwesomeIcon icon={faUser} className="user-icon" />
+                    </Link>
+                )}
             </div>
         </header>
     );

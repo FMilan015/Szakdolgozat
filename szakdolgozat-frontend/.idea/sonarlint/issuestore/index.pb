@@ -29,3 +29,13 @@ f
 6src/pages/authentication/authentication-style/Auth.css,c\2\c2d4991c872f9b192bd020bf2150e005366b19b7
 D
 public/manifest.json,4\2\42e89cd2213b9d5dfae4f63522702c623170d792
+N
+src/pages/pages-style/Home.css,9\0\90854f55dbf9cc5fa75b84e10170bbbebed1d86d
+E
+src/pages/Profile.tsx,5\6\56e3648362ba534233cc4e36f6b5a856087fb5fd
+Q
+!src/pages/pages-style/Profile.css,8\d\8ddd0593dedd1a93e1f76c7e8edd67ea475fb231
+Q
+!src/components/ProtectedRoute.tsx,7\9\791211a86cebd553a95136ac8e5030eef5eb8c66
+I
+src/config/axiosConfig.ts,b\6\b61e27dde1d96f5a7c750963da23a374aa9771c2
