@@ -9,8 +9,6 @@ B
 src/pages/News.tsx,b\5\b5f35294a95a54d776fc32b7a559cd91be32398d
 G
 src/pages/Tutorials.tsx,8\d\8dd87b99bfd056a923302d7a2ae78558dab92632
-Q
-!src/pages/PortfolioManagement.tsx,d\8\d8ca498bb4b5b3abdcc3cfede0c6ce30c300dd77
 G
 src/pages/PriceData.tsx,f\9\f9ca11eb42472b0c03c6fbfd65bbc560ba8ecf5c
 J

@@ -11,19 +11,19 @@ const Home: React.FC = () => {
     useEffect(() => {
         const fetchTrendingNews = async () => {
             try {
-                const newsResponse = await axios.get('http://localhost:8080/api/news/trending');
+                const newsResponse = await axios.get('http://localhost:8080/api/news/trendingNEHASZNALDMEG');
                 setTrendingNews(newsResponse.data.slice(0, 2));
             } catch (error) {
-                console.error('Error fetching trending news', error);
+                console.error('Error fetching trending news on frontend', error);
             }
         };
 
         const fetchTrendingData = async () => {
             try {
-                const dataResponse = await axios.get('http://localhost:8080/api/data/trending');
+                const dataResponse = await axios.get('http://localhost:8080/api/data/trendingNEHASZNALDMEG');
                 setTrendingData(dataResponse.data.slice(0, 4));
             } catch (error) {
-                console.error('Error fetching trending data', error);
+                console.error('Error fetching trending data on frontend', error);
             }
         };
 
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                             </div>
                         ))
                     ) : (
-                        <p>No trending news available</p>
+                        <p>Loading...</p>
                     )}
                     <p onClick={() => navigate('/news')} className="go-to-news">Go to News</p>
                 </div>
@@ -77,7 +77,7 @@ const Home: React.FC = () => {
                             </tbody>
                         </table>
                     ) : (
-                        <p>No trending data available</p>
+                        <p>Loading...</p>
                     )}
                     <p onClick={() => navigate('/price-data')} className="go-to-price-data">Go to Price data</p>
                 </div>

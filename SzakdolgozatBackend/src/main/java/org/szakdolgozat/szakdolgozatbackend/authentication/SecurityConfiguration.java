@@ -29,7 +29,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/user/**").hasAnyRole("ADMIN", "USER")
-                        .requestMatchers("/", "/home", "/api/auth/**", "/api/news/trending", "/api/data/trending", "/PUSH/**", "/HEARTBEAT/**").permitAll()
+                        .requestMatchers("/", "/home", "/api/**", "/api/auth/**", "/api/news/trending", "/api/data/trending",
+                                "/PUSH/**", "/HEARTBEAT/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

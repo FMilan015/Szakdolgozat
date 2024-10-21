@@ -46,7 +46,7 @@ public class NewsController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(500).body("Error fetching news");
+            return ResponseEntity.status(500).body("Error fetching news on backend");
         }
     }
 }

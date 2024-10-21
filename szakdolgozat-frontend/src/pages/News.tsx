@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './pages-style/Pages.css';
 
@@ -8,11 +8,16 @@ const News: React.FC = () => {
 
     useEffect(() => {
         const fetchNews = async () => {
+            const token = localStorage.getItem('token');
             try {
-                const response = await axios.get(`http://localhost:8080/api/news?page=${page}`);
+                const response = await axios.get(`http://localhost:8080/api/news?page=${page}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
                 setNews(response.data);
             } catch (error) {
-                console.error("Error fetching news", error);
+                console.error("Error fetching news on frontend", error);
             }
         };
         fetchNews();
@@ -40,7 +45,7 @@ const News: React.FC = () => {
                         </div>
                     ))
                 ) : (
-                    <p>No news available</p>
+                    <p>Loading...</p>
                 )}
             </div>
 

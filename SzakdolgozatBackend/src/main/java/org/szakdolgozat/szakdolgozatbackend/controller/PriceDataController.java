@@ -40,7 +40,7 @@ public class PriceDataController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(500).body("Error fetching crypto data");
+            return ResponseEntity.status(500).body("Error fetching crypto data on backend");
         }
     }
 
@@ -105,7 +105,7 @@ public class PriceDataController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(500).body("Error fetching stock data");
+            return ResponseEntity.status(500).body("Error fetching stock data on backend");
         }
     }
 

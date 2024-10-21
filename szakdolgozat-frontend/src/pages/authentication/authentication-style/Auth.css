@@ -61,3 +61,13 @@
 .register-link:hover {
     color: #3498db;
 }
+
+.error-message {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 260px;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../config/axiosConfig';
+import axios from 'axios';
 import './pages-style/Pages.css';
 
 const PriceData: React.FC = () => {
@@ -10,16 +10,20 @@ const PriceData: React.FC = () => {
     const fetchData = async (type: string, page: number) => {
         let url = '';
         if (type === 'CRYPTO') {
-            url = `/api/crypto?page=${page}`;
+            url = `http://localhost:8080/api/crypto?page=${page}`;
         } else if (type === 'STOCK') {
-            url = `/api/stocks?page=${page}`;
+            url = `http://localhost:8080/api/stocks?page=${page}`;
         }
-
+        const token = localStorage.getItem('token');
         try {
-            const response = await api.get(url);
+            const response = await axios.get(url, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             setData(response.data);
         } catch (error) {
-            console.error("Error fetching data", error);
+            console.error("Error fetching data on frontend", error);
             setData([]);
         }
     };
@@ -91,7 +95,7 @@ const PriceData: React.FC = () => {
                     ) : (
                         <tr>
                             <td colSpan={category === 'CRYPTO' ? 6 : 5} style={{ textAlign: 'center' }}>
-                                No data available
+                                Loading...
                             </td>
                         </tr>
                     )}
