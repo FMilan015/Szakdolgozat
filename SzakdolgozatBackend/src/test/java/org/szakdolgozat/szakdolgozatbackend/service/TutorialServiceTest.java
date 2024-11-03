@@ -84,23 +84,16 @@ class TutorialServiceTest {
 
     @Test
     void testDownloadFile_FileExists() throws IOException {
-        // Arrange
         GridFSFile file = mock(GridFSFile.class);
-        InputStream inputStream = mock(InputStream.class);
         GridFsResource resource = mock(GridFsResource.class);
-
-        // Mock the ObjectId
-        ObjectId objectId = new ObjectId("507f1f77bcf86cd799439011");
-        when(file.getObjectId()).thenReturn(objectId);
+        InputStream inputStream = mock(InputStream.class);
 
         when(gridFsTemplate.findOne(any(Query.class))).thenReturn(file);
         when(gridFsOperations.getResource(eq(file))).thenReturn(resource);
         when(resource.getInputStream()).thenReturn(inputStream);
 
-        // Act
         InputStream result = tutorialService.downloadFile("file1.jpg");
 
-        // Assert
         assertNotNull(result);
         verify(gridFsTemplate, times(1)).findOne(any(Query.class));
         verify(gridFsOperations, times(1)).getResource(eq(file));
