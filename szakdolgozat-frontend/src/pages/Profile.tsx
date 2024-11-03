@@ -35,7 +35,7 @@ const Profile: React.FC = () => {
     return (
         <div className="profile-page">
             <div className="profile-box">
-                <h2>Your profile</h2>
+                <h2>Profile</h2>
                 <table className="profile-info-table">
                     <thead>
                     <tr>
@@ -45,11 +45,11 @@ const Profile: React.FC = () => {
                     </thead>
                     <tbody>
                     <tr>
-                        <td><strong>Username</strong></td>
+                        <td><strong>Username:</strong></td>
                         <td>{userData.username}</td>
                     </tr>
                     <tr>
-                        <td><strong>Email</strong></td>
+                        <td><strong>Email:</strong></td>
                         <td>{userData.email}</td>
                     </tr>
                     </tbody>

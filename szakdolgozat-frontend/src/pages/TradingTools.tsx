@@ -41,7 +41,7 @@ const TradingTools: React.FC = () => {
     const calculateResult = () => {
         if (!validateInputs()) {
             setError('Please fill in all fields');
-            setResult(null); // Clear the result if validation fails
+            setResult(null);
             return;
         }
 
