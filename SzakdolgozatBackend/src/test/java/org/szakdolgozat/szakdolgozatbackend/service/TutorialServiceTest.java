@@ -28,12 +28,12 @@ class TutorialServiceTest {
     @Mock
     private GridFsOperations gridFsOperations;
 
-    @InjectMocks
     private TutorialService tutorialService;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+        tutorialService = new TutorialService(gridFsTemplate, gridFsOperations);
     }
 
     @Test
