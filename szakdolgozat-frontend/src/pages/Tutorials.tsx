@@ -11,10 +11,8 @@ const Tutorials: React.FC = () => {
     const [tutorials, setTutorials] = useState<Tutorial[]>([]);
     const [error, setError] = useState<string | null>(null);
 
-    // A YouTube linkek mappingje a fájlnevekhez
     const youtubeLinks: { [key: string]: string } = {
-        //TODO
-        'tutorial1.jpg': 'https://www.youtube.com/watch?v=video1',
+        'tutorial1.jpg': 'https://www.youtube.com/watch?v=Dggu6VBQQyM',
         'tutorial2.jpg': 'https://www.youtube.com/watch?v=mRuohN6NzBA',
         'tutorial3.jpg': 'https://www.youtube.com/watch?v=duxYgnPPJsI',
         'tutorial4.jpg': 'https://www.youtube.com/watch?v=W9uVuHggqbs',
@@ -23,8 +21,21 @@ const Tutorials: React.FC = () => {
         'tutorial7.jpg': 'https://www.youtube.com/watch?v=4yObyRbFjBw',
         'tutorial8.jpg': 'https://www.youtube.com/watch?v=BIxs5q18Frw',
         'tutorial9.jpg': 'https://www.youtube.com/watch?v=rWrqz7YtV4M',
-        'tutorial10.jpg': 'https://www.youtube.com/watch?v=BALFiMMyUfU',
+        'tutorial10.jpg': 'https://www.youtube.com/watch?v=KhnxSbgjyeo',
     };
+
+    const titles = [
+        "Top Down Analysis",
+        "Smart Money Concepts (SMC)",
+        "TradingView Tutorial",
+        "Technical Analysis",
+        "Market Structure Trading",
+        "Liquidity Grab Trading",
+        "Moving Averages",
+        "Momentum Trading",
+        "ATR Indicator",
+        "MACD Indicator"
+    ];
 
     useEffect(() => {
         axios.get<string[]>('http://localhost:8080/api/tutorials')
@@ -53,14 +64,17 @@ const Tutorials: React.FC = () => {
                 {tutorials.length === 0 ? (
                     <p>No images available</p>
                 ) : (
-                    tutorials.map((tutorial) => (
-                        <a key={tutorial.fileName} href={tutorial.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                            <img
-                                src={`http://localhost:8080/api/tutorials/${tutorial.fileName}`}
-                                alt={`Tutorial ${tutorial.fileName}`}
-                                className="tutorial-image"
-                            />
-                        </a>
+                    tutorials.map((tutorial, index) => (
+                        <div key={tutorial.fileName} className="tutorial-item">
+                            <a href={tutorial.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={`http://localhost:8080/api/tutorials/${tutorial.fileName}`}
+                                    alt={`Tutorial ${tutorial.fileName}`}
+                                    className="tutorial-image"
+                                />
+                            </a>
+                            <p className="tutorial-title">{titles[index]}</p>
+                        </div>
                     ))
                 )}
             </div>

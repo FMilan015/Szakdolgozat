@@ -241,6 +241,21 @@ h2, h3 {
     transform: scale(1.1);
 }
 
+.tutorial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tutorial-title {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
 
 
 

@@ -35,5 +35,10 @@ Q
 !src/pages/pages-style/Profile.css,8\d\8ddd0593dedd1a93e1f76c7e8edd67ea475fb231
 Q
 !src/components/ProtectedRoute.tsx,7\9\791211a86cebd553a95136ac8e5030eef5eb8c66
-I
-src/config/axiosConfig.ts,b\6\b61e27dde1d96f5a7c750963da23a374aa9771c2
+:
+
+Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+=
+.dockerignore,0\5\05a721ebe3ba0754116825ed1359ff1785f4bbac
