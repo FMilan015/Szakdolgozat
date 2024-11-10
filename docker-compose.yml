@@ -7,10 +7,10 @@ services:
       dockerfile: Dockerfile
     image: backend
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/szakdoga
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: asd1234
-      SPRING_DATA_MONGODB_URI: mongodb://host.docker.internal:27017/szakdoga
+      SPRING_DATASOURCE_URL: jdbc:postgresql://szakdoga-postgresql-db.ch4mw0qwom8d.eu-north-1.rds.amazonaws.com:5432/szakdoga
+      SPRING_DATASOURCE_USERNAME: szakdoga
+      SPRING_DATASOURCE_PASSWORD: szakdoga
+      SPRING_DATA_MONGODB_URI: mongodb+srv://szakdoga:szakdoga@szakdoga.przm6.mongodb.net/?retryWrites=true&w=majority/szakdoga
     depends_on:
       - postgres
       - mongo

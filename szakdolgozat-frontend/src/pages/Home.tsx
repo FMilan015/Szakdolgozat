@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     useEffect(() => {
         const fetchTrendingNews = async () => {
             try {
-                const newsResponse = await axios.get('http://localhost:8080/api/news/trendingMEGNEHASZNALD');
+                const newsResponse = await axios.get('http://localhost:8080/api/news/trending');
                 setTrendingNews(newsResponse.data.slice(0, 2));
             } catch (error) {
                 console.error('Error fetching trending news on frontend', error);
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
 
         const fetchTrendingData = async () => {
             try {
-                const dataResponse = await axios.get('http://localhost:8080/api/data/trendingMEGNEHASZNALD');
+                const dataResponse = await axios.get('http://localhost:8080/api/data/trending');
                 setTrendingData(dataResponse.data.slice(0, 4));
             } catch (error) {
                 console.error('Error fetching trending data on frontend', error);

@@ -11,9 +11,9 @@ jobs:
       postgres:
         image: postgres:13
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: asd1234
-          POSTGRES_DB: szakdoga
+          POSTGRES_URL: jdbc:postgresql://szakdoga-postgresql-db.ch4mw0qwom8d.eu-north-1.rds.amazonaws.com:5432/szakdoga
+          POSTGRES_USER: szakdoga
+          POSTGRES_PASSWORD: szakdoga
         ports:
           - 5432:5432
         options: >-
@@ -35,6 +35,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
+      - name: Tests
         working-directory: ./SzakdolgozatBackend
         run: mvn clean install -DskipTests=false
