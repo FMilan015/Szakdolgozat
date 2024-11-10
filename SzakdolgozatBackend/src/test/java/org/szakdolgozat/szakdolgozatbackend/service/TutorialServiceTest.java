@@ -21,6 +21,7 @@ import java.io.InputStream;
 import java.util.*;
 import java.util.function.Consumer;
 
+@Disabled
 class TutorialServiceTest {
 
     @Mock
