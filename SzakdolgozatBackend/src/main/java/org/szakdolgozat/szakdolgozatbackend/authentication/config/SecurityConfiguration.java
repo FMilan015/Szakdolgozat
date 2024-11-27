@@ -1,4 +1,4 @@
-package org.szakdolgozat.szakdolgozatbackend.authentication;
+package org.szakdolgozat.szakdolgozatbackend.authentication.config;
 
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.szakdolgozat.szakdolgozatbackend.authentication.config.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity

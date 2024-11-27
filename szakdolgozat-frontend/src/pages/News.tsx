@@ -41,7 +41,6 @@ const News: React.FC = () => {
                         <div key={index} className="news-item">
                             <h3><a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a></h3>
                             <p>{item.summary}</p>
-                            <small>{item.source} - {new Date(item.time_published).toLocaleString()}</small>
                         </div>
                     ))
                 ) : (

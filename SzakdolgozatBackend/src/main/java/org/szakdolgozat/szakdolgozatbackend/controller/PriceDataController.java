@@ -47,8 +47,8 @@ public class PriceDataController {
     @GetMapping("/api/stocks")
     public ResponseEntity<?> getStockData(@RequestParam int page) {
         String[] top100Stocks = {
-                "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "FB", "NVDA", "BRK.B", "JPM", "JNJ",
-                "V", "PG", "UNH", "DIS", "HD", "MA", "PYPL", "NFLX", "VZ", "PFE",
+                "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "NVDA", "BRK.B", "JPM", "JNJ",
+                "NFLX", "PG", "UNH", "DIS", "HD", "MA", "PYPL", "V", "VZ", "PFE",
                 "NKE", "XOM", "KO", "MRK", "WMT", "PEP", "ADBE", "CRM", "CSCO", "INTC",
                 "T", "CMCSA", "ABBV", "MDT", "CVX", "HON", "BA", "ABT", "MCD", "IBM",
                 "QCOM", "LLY", "AMGN", "TMO", "DHR", "MMM", "GE", "ORCL", "C", "LOW",
@@ -68,7 +68,7 @@ public class PriceDataController {
 
             for (int i = startIndex; i < endIndex; i++) {
                 String symbol = top100Stocks[i];
-                String url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + symbol + "&apikey=YOUR_API_KEY";
+                String url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + symbol + "&apikey=API_KEY";
                 String result = restTemplate.getForObject(url, String.class);
 
                 ObjectMapper mapper = new ObjectMapper();

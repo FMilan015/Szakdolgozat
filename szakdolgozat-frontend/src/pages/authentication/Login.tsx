@@ -6,12 +6,12 @@ import './authentication-style/Auth.css';
 const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState<string | null>(null); // New state for error message
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const navigate = useNavigate();
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        setErrorMessage(null); // Reset error message before attempting login
+        setErrorMessage(null);
 
         try {
             const response = await axios.post('http://localhost:8080/api/auth/authenticate', {
@@ -26,7 +26,7 @@ const Login: React.FC = () => {
             }
         } catch (error) {
             console.error('Login failed', error);
-            setErrorMessage("Login failed. Please check your username and password."); // Set error message
+            setErrorMessage("Login failed. Please check your username and password.");
         }
     };
 
@@ -43,7 +43,7 @@ const Login: React.FC = () => {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" required />
                 </div>
 
-                {/* Display error message if login fails */}
+                {}
                 {errorMessage && (
                     <div className="error-message">
                         {errorMessage}

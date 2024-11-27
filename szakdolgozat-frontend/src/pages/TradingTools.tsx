@@ -40,7 +40,7 @@ const TradingTools: React.FC = () => {
 
     const calculateResult = () => {
         if (!validateInputs()) {
-            setError('Please fill in all fields');
+            setError('Please fill in all fields!');
             setResult(null);
             return;
         }
@@ -82,7 +82,7 @@ const TradingTools: React.FC = () => {
                 <button onClick={() => handleToolSelection('Compound interest')}>Compound interest</button>
             </div>
 
-            <p className="tool-description">Select a tool and enter the required data</p>
+            <p className="tool-description">Select a tool and provide the required data. If it involves an amount of money, enter it in HUF.</p>
 
             {selectedTool && (
                 <div className="tool-inputs">
@@ -135,15 +135,15 @@ const TradingTools: React.FC = () => {
                                 <tbody>
                                 <tr>
                                     <td>Total future value (with investment):</td>
-                                    <td>{Number(result).toLocaleString()} Ft</td>
+                                    <td>{Number(result).toLocaleString()} HUF</td>
                                 </tr>
                                 <tr>
                                     <td>Total invested amount:</td>
-                                    <td>{Number(totalContributions).toLocaleString()} Ft</td>
+                                    <td>{Number(totalContributions).toLocaleString()} HUF</td>
                                 </tr>
                                 <tr>
                                     <td>Profit earned from investment:</td>
-                                    <td>{Number(profit).toLocaleString()} Ft</td>
+                                    <td>{Number(profit).toLocaleString()} HUF</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -153,7 +153,7 @@ const TradingTools: React.FC = () => {
 
                     {result !== null && selectedTool === 'Profit & Loss' && (
                         <div className="result-box">
-                            <h3>Result: {Number(result).toLocaleString()} Ft</h3>
+                            <h3>Result: {Number(result).toLocaleString()} HUF</h3>
                             <p>This is your profit or loss based on the entry and exit prices and the position size.</p>
                         </div>
                     )}

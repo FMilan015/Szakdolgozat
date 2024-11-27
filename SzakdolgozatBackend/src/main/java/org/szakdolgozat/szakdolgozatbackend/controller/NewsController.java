@@ -15,7 +15,7 @@ public class NewsController {
 
     @GetMapping("/api/news")
     public ResponseEntity<?> getNews(@RequestParam int page) {
-        String apiKey = "YOUR_API_KEY";
+        String apiKey = "API_KEY";
         String url = "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=" + apiKey;
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(url, String.class);
